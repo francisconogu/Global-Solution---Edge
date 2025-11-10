@@ -88,16 +88,6 @@ Copiar código
   "alerta_temperatura": "",
   "alerta_umidade": "Umidade baixa! O ar pode estar ressecado."
 }
-Como Monitorar
-Você pode visualizar esses dados usando:
-
-MQTT Explorer
-
-Node-RED
-
-MQTT Dashboard (Android / iOS)
-
-Home Assistant
 
 ⚙️ Dependências
 Biblioteca	Função	Instalação
@@ -112,8 +102,6 @@ Conecte o ESP32 ao Wi-Fi configurado no código.
 
 Abra um cliente MQTT e conecte ao broker:
 
-makefile
-Copiar código
 Broker: test.mosquitto.org
 Porta: 1883
 Tópico: pfc/sedentario_luz
