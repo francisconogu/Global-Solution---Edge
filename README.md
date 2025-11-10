@@ -64,7 +64,7 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 
 ## 🌐 Link do Wokwi (Simulação)
 
-🔗 https://wokwi.com/projects/SEU_PROJETO_AQUI
+🔗 I
 
 ---
 
