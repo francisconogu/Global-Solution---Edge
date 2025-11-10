@@ -1,40 +1,46 @@
 # 🏡 Sistema de Monitoramento de Condições em Home Office
 
-Este projeto tem como objetivo auxiliar trabalhadores em **home office** a manterem um ambiente saudável e promoverem pausas durante o trabalho.  
-O sistema realiza **monitoramento contínuo** de temperatura, umidade, luminosidade e tempo sentado, enviando os dados via **MQTT** para acompanhamento em dashboards IoT.
+Trabalhar em casa traz comodidade, mas também pode criar **hábitos prejudiciais à saúde** sem que o usuário perceba. Este projeto propõe um sistema inteligente capaz de **monitorar o ambiente e o comportamento postural**, emitindo **alertas preventivos** para promover bem-estar durante longos períodos de trabalho no computador.
 
 ---
 
 ## 🎯 Problema
 
-Muitas pessoas que trabalham remotamente passam longos períodos sentadas, em ambientes mal iluminados e com condições ambientais inadequadas. Isso pode causar:
+Com a expansão do **home office**, milhares de pessoas passaram a trabalhar longas jornadas em casa, sem acompanhamento ergonômico ou controle ambiental. Isso gera riscos como:
 
-- Desconforto físico e fadiga
-- Ar ressecado e irritação respiratória
-- Risco de estresse térmico
-- Dores musculares e má postura
+- Permanecer **sentado por horas**, reduzindo o fluxo sanguíneo e aumentando dores e fadiga.
+- Trabalhar em ambientes com **má ventilação, temperatura inadequada** ou **umidade baixa**, o que afeta o conforto respiratório e a concentração.
+- Falta de **consciência sobre o tempo**, levando a jornadas pouco saudáveis.
 
-Além disso, muitas vezes o usuário **não percebe** quanto tempo já está na mesma posição.
+Estudos mostram que **ficar sentado por longos períodos** está diretamente relacionado a:
+- Problemas posturais e dores nas costas
+- Redução da oxigenação e foco
+- Maior risco de doenças cardiovasculares
+
+Em muitos casos, o problema acontece **sem que a pessoa se dê conta**.  
+A rotina “silenciosamente prejudicial” é o que torna esse cenário perigoso.
 
 ---
 
 ## ✅ Solução Proposta
 
-O sistema monitora em tempo real:
+Criamos um sistema embarcado com o **ESP32** que:
+- **Monitora continuamente**:
+  - Temperatura e umidade (DHT22)
+  - Luminosidade do ambiente (LDR)
+  - Tempo ininterrupto sentado (lógica interna + botão de reset)
+- **Detecta situações prejudiciais**, como:
+  - Ambiente muito quente
+  - Ar excessivamente seco
+  - Permanência prolongada sentado
+- **Gera alertas automáticos**:
+  - Mensagens explicativas enviadas via **MQTT**
+  - Sinal sonoro através de **buzzer**
 
-| Variável | Sensor | Finalidade |
-|---------|--------|-----------|
-| Temperatura e Umidade | DHT22 | Avaliar conforto térmico |
-| Luminosidade | LDR | Verificar condição de iluminação |
-| Tempo sentado | Lógica interna + botão de reset | Promover pausas e ergonomia |
+### Por que isso importa?
 
-Quando valores ultrapassam limites saudáveis, o sistema:
-
-- Envia alertas via **MQTT**
-- Ativa um **buzzer**
-- Exibe mensagens de aviso no console
-
-Isso estimula o usuário a **levantar, hidratar-se, ajustar luz, ventilar o ambiente**, etc.
+Em vez de exigir disciplina do usuário, o sistema **age como um lembrete inteligente**, incentivando pausas, hidratação e ajustes no ambiente.  
+Ele transforma uma rotina invisível em algo percebido e **controlável**.
 
 ---
 
@@ -43,40 +49,36 @@ Isso estimula o usuário a **levantar, hidratar-se, ajustar luz, ventilar o ambi
 | Componente | Quantidade | Função |
 |-----------|-----------|--------|
 | ESP32 DevKit | 1 | Processamento + Wi-Fi |
-| Sensor DHT22 | 1 | Temperatura e Umidade |
-| LDR + Resistor | 1 par | Sensor de luminosidade |
-| Buzzer | 1 | Sinal sonoro de alerta |
+| DHT22 | 1 | Temperatura e umidade |
+| LDR + Resistor | 1 par | Luminosidade |
+| Buzzer | 1 | Alerta sonoro |
 | Push Button | 1 | Reset do tempo sentado |
 
 ---
 
 ## 🔌 Esquema do Circuito
 
-> **Substitua pela imagem do seu projeto no Wokwi**
+<img width="723" height="841" alt="image" src="https://github.com/user-attachments/assets/5f809240-cb7d-4a93-98be-1c81fced1549" />
+
 
 **Imagem do circuito:**  
-![Circuito](colocar_link_da_imagem_aqui)
+![Circuito](COLE_O_LINK_AQUI)
 
 ---
 
 ## 🌐 Link do Wokwi (Simulação)
 
-> Colar aqui o link após publicar:
-
 🔗 https://wokwi.com/projects/SEU_PROJETO_AQUI
 
 ---
 
-## 🧩 Tópicos MQTT Utilizados
+## 🧩 Comunicação MQTT
 
-O sistema utiliza o broker público **test.mosquitto.org**, sem autenticação, usando o tópico:
+O sistema publica os dados no tópico:
 
 pfc/sedentario_luz
 
-pgsql
-Copiar código
-
-### Formato da mensagem enviada (JSON)
+### Formato da mensagem (JSON)
 
 ```json
 {
@@ -88,29 +90,31 @@ Copiar código
   "alerta_temperatura": "",
   "alerta_umidade": "Umidade baixa! O ar pode estar ressecado."
 }
-
-⚙️ Dependências
-Biblioteca	Função	Instalação
-DHT Sensor Library	Leitura do DHT22	Arduino IDE > Gerenciador de Bibliotecas
-PubSubClient	Comunicação MQTT	Arduino IDE > Gerenciador de Bibliotecas
-WiFi.h (nativa do ESP32)	Conexão Wi-Fi	Já incluída
-
-▶️ Como Utilizar
-Abra o projeto no Wokwi ou carregue no ESP32 real.
-
-Conecte o ESP32 ao Wi-Fi configurado no código.
-
-Abra um cliente MQTT e conecte ao broker:
-
+Broker utilizado
 Broker: test.mosquitto.org
 Porta: 1883
-Tópico: pfc/sedentario_luz
-Observe os dados em tempo real.
 
-Caso permaneça muito tempo sentado, o buzzer irá tocar.
+⚙️ Dependências
 
-Pressione o botão para resetar o tempo sentado.
+Biblioteca	Função
+DHT Sensor Library	Leitura do DHT22
+PubSubClient	Envio MQTT
+WiFi.h	Conexão Wi-Fi do ESP32
+
+Instaláveis pelo Gerenciador de Bibliotecas do Arduino IDE.
+
+▶️ Modo de Uso
+Carregue o código no ESP32 ou execute no Wokwi.
+
+Abra um cliente MQTT (ex: MQTT Explorer).
+
+Conecte ao broker: test.mosquitto.org:1883.
+
+Assine o tópico: pfc/sedentario_luz.
+
+Observe as condições e alertas em tempo real.
+
+Ao levantar para pausa, pressione o botão para resetar o tempo sentado.
 
 📜 Licença
-Este projeto pode ser utilizado para fins educacionais e de pesquisa.
-
+Projeto disponível para fins acadêmicos, educacionais e de pesquisa.
