@@ -60,10 +60,6 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 
 <img width="723" height="841" alt="image" src="https://github.com/user-attachments/assets/5f809240-cb7d-4a93-98be-1c81fced1549" />
 
-
-**Imagem do circuito:**  
-![Circuito](COLE_O_LINK_AQUI)
-
 ---
 
 ## 🌐 Link do Wokwi (Simulação)
