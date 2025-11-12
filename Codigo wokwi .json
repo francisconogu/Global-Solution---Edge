@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Francisco Queiroz",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -10, "left": -10, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht", "top": -124.5, "left": -111, "attrs": {} },
+    { "type": "wokwi-ldr", "id": "ldr", "top": -20, "left": 160, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "buz", "top": 165.6, "left": 136.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "resetBtn",
+      "top": 131,
+      "left": -211.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -182.7,
+      "left": -15.1,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:5V", "dht:VCC", "red", [] ],
+    [ "esp:GND.1", "dht:GND", "black", [] ],
+    [ "dht:SDA", "esp:4", "green", [] ],
+    [ "ldr:VCC", "esp:3V3", "red", [] ],
+    [ "ldr:SIG", "esp:34", "yellow", [] ],
+    [ "buz:1", "esp:15", "green", [] ],
+    [ "buz:2", "esp:GND.3", "black", [] ],
+    [ "resetBtn:1.r", "esp:GND.4", "black", [] ],
+    [ "resetBtn:2.r", "esp:12", "blue", [] ],
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "v38.4", "h-96" ] ],
+    [ "ldr1:GND", "esp:GND.2", "black", [ "v48", "h29.2", "v28.8" ] ],
+    [ "esp:34", "ldr1:AO", "green", [ "h5.39", "v-114.8", "h57.6" ] ]
+  ],
+  "dependencies": {}
+}
