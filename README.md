@@ -50,7 +50,7 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 |-----------|-----------|--------|
 | ESP32 DevKit | 1 | Processamento + Wi-Fi |
 | DHT22 | 1 | Temperatura e umidade |
-| LDR + Resistor | 1 par | Luminosidade |
+| LDR | 1 | Luminosidade |
 | Buzzer | 1 | Alerta sonoro |
 | Push Button | 1 | Reset do tempo sentado |
 
@@ -60,11 +60,19 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 
 <img width="723" height="841" alt="image" src="https://github.com/user-attachments/assets/5f809240-cb7d-4a93-98be-1c81fced1549" />
 
+## 🔌 Fluxo node-red
+
+<img width="511" height="322" alt="image" src="https://github.com/user-attachments/assets/55add54d-8006-49ce-a669-e681ec5161da" />
+
+## 🔌 Dashboards
+
+<img width="489" height="460" alt="image" src="https://github.com/user-attachments/assets/1272fe2b-ca22-4cd8-bfcd-4cb5d642c22c" />
+
 ---
 
 ## 🌐 Link do Wokwi (Simulação)
 
-🔗 I
+🔗 https://wokwi.com/projects/447384586090823681
 
 ---
 
@@ -87,7 +95,7 @@ pfc/sedentario_luz
   "alerta_umidade": "Umidade baixa! O ar pode estar ressecado."
 }
 Broker utilizado
-Broker: test.mosquitto.org
+Broker: broker.emqx.io
 Porta: 1883
 
 ⚙️ Dependências
@@ -104,7 +112,7 @@ Carregue o código no ESP32 ou execute no Wokwi.
 
 Abra um cliente MQTT (ex: MQTT Explorer).
 
-Conecte ao broker: test.mosquitto.org:1883.
+Conecte ao broker: broker.emqx.io:1883.
 
 Assine o tópico: pfc/sedentario_luz.
 
