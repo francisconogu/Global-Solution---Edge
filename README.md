@@ -75,6 +75,12 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 🔗 https://wokwi.com/projects/447384586090823681
 
 ---
+
+## 🌐 Link do Video Explicativo
+
+🔗 https://youtu.be/sBU5B9_S_RU
+
+---
 🚀 Passo a Passo para Execução
 
 1️⃣ Iniciar o Node-RED
