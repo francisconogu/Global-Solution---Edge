@@ -165,7 +165,7 @@ Porta: 1883
 |PubSubClient |	Envio MQTT|
 |WiFi.h |	Conexão Wi-Fi do ESP32|
 
-Instaláveis pelo Gerenciador de Bibliotecas do Arduino IDE.
+Instaláveis pelo Gerenciador de Bibliotecas.
 
 📜 Licença
 Projeto disponível para fins acadêmicos, educacionais e de pesquisa.
