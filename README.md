@@ -102,7 +102,7 @@ http://localhost:1880
 
 2️⃣ Importar o Fluxo do Projeto
 
-No editor do Node-RED, clique em Menu (☰) → Import → Clipboard.
+No editor do Node-RED, clique em Menu (☰) → Importar.
 
 Cole o código JSON do fluxo fornecido neste projeto.
 
@@ -132,8 +132,6 @@ No Node-RED, acesse o painel do dashboard
 
 Veja em tempo real os gráficos e valores de temperatura e umidade.
 
-Se quiser, adicione indicadores, gráficos lineares e gauge para melhor visualização.
-
 ---
 
 ## 🧩 Comunicação MQTT
@@ -154,6 +152,7 @@ pfc/sedentario_luz
   "alerta_temperatura": "",
   "alerta_umidade": "Umidade baixa! O ar pode estar ressecado."
 }
+```
 Broker utilizado
 Broker: broker.emqx.io
 Porta: 1883
@@ -166,19 +165,6 @@ PubSubClient	Envio MQTT
 WiFi.h	Conexão Wi-Fi do ESP32
 
 Instaláveis pelo Gerenciador de Bibliotecas do Arduino IDE.
-
-▶️ Modo de Uso
-Carregue o código no ESP32 ou execute no Wokwi.
-
-Abra um cliente MQTT (ex: MQTT Explorer).
-
-Conecte ao broker: broker.emqx.io:1883.
-
-Assine o tópico: pfc/sedentario_luz.
-
-Observe as condições e alertas em tempo real.
-
-Ao levantar para pausa, pressione o botão para resetar o tempo sentado.
 
 📜 Licença
 Projeto disponível para fins acadêmicos, educacionais e de pesquisa.
