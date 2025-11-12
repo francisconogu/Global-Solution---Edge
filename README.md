@@ -48,7 +48,7 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 
 | Componente | Quantidade | Função |
 |-----------|-----------|--------|
-| ESP32 DevKit | 1 | Processamento + Wi-Fi |
+| ESP32 | 1 | Processamento + Wi-Fi |
 | DHT22 | 1 | Temperatura e umidade |
 | LDR | 1 | Luminosidade |
 | Buzzer | 1 | Alerta sonoro |
