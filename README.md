@@ -75,6 +75,60 @@ Ele transforma uma rotina invisível em algo percebido e **controlável**.
 🔗 https://wokwi.com/projects/447384586090823681
 
 ---
+🚀 Passo a Passo para Execução
+
+1️⃣ Iniciar o Node-RED
+
+Abra o Node-RED no seu computador.
+
+Caso ainda não tenha, instale via terminal:
+
+npm install -g node-red
+
+
+Execute o Node-RED:
+
+node-red
+
+
+Acesse o editor no navegador:
+http://localhost:1880
+
+2️⃣ Importar o Fluxo do Projeto
+
+No editor do Node-RED, clique em Menu (☰) → Import → Clipboard.
+
+Cole o código JSON do fluxo fornecido neste projeto.
+
+Clique em Importar.
+
+Verifique se os nós estão conectados corretamente ao broker MQTT.
+
+Clique em Deploy (canto superior direito).
+
+3️⃣ Executar o Projeto no Wokwi
+
+Acesse o link do projeto Wokwi:
+
+ https://wokwi.com/projects/447384586090823681
+
+Faça login (opcional, mas recomendado).
+
+Clique em ▶️ Start Simulation.
+
+O ESP32 se conectará ao Wi-Fi virtual e ao broker MQTT.
+
+Observe as mensagens sendo enviadas para o Node-RED.
+
+4️⃣ Visualizar o Dashboard
+
+No Node-RED, acesse o painel do dashboard
+
+Veja em tempo real os gráficos e valores de temperatura e umidade.
+
+Se quiser, adicione indicadores, gráficos lineares e gauge para melhor visualização.
+
+---
 
 ## 🧩 Comunicação MQTT
 
