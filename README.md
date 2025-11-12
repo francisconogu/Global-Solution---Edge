@@ -159,10 +159,11 @@ Porta: 1883
 
 ⚙️ Dependências
 
-Biblioteca	Função
-DHT Sensor Library	Leitura do DHT22
-PubSubClient	Envio MQTT
-WiFi.h	Conexão Wi-Fi do ESP32
+|Biblioteca |	Função |
+|-----------|--------|
+|DHT Sensor Library |	Leitura do DHT22|
+|PubSubClient |	Envio MQTT|
+|WiFi.h |	Conexão Wi-Fi do ESP32|
 
 Instaláveis pelo Gerenciador de Bibliotecas do Arduino IDE.
 
