@@ -1,0 +1,422 @@
+[
+    {
+        "id": "9322692816626645",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4c0fea4f63b909ce",
+        "type": "mqtt in",
+        "z": "9322692816626645",
+        "name": "",
+        "topic": "pfc/sedentario_luz",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ee9418e2adfec36f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "3440649b84436249",
+                "bc9e2e4d7fe892f6",
+                "e7908f4a8eb8a464",
+                "c5708787a84b10da",
+                "5e5bcadf209db55f",
+                "fd90cfcfebd24d8e",
+                "4c7aea024c04a795",
+                "b74b6b7b201c7f28"
+            ]
+        ]
+    },
+    {
+        "id": "3440649b84436249",
+        "type": "change",
+        "z": "9322692816626645",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "ab926b6ddf6cabf1"
+            ]
+        ]
+    },
+    {
+        "id": "ab926b6ddf6cabf1",
+        "type": "ui_gauge",
+        "z": "9322692816626645",
+        "name": "",
+        "group": "b055757a24bdfcee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0f340385f77969c7",
+        "type": "ui_gauge",
+        "z": "9322692816626645",
+        "name": "",
+        "group": "b055757a24bdfcee",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Umidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#c51f02",
+            "#e6e600",
+            "#4dff00"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bc9e2e4d7fe892f6",
+        "type": "change",
+        "z": "9322692816626645",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.umidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "0f340385f77969c7"
+            ]
+        ]
+    },
+    {
+        "id": "e7908f4a8eb8a464",
+        "type": "change",
+        "z": "9322692816626645",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.tempo_sentado_s",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "d0f34c1cc470501c"
+            ]
+        ]
+    },
+    {
+        "id": "d0f34c1cc470501c",
+        "type": "ui_chart",
+        "z": "9322692816626645",
+        "name": "",
+        "group": "b05be9771a5906aa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Tempo sentado",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5708787a84b10da",
+        "type": "ui_text",
+        "z": "9322692816626645",
+        "group": "b055757a24bdfcee",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Alerta Temperatura: ",
+        "format": "{{msg.payload.alerta_temperatura}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5e5bcadf209db55f",
+        "type": "debug",
+        "z": "9322692816626645",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fd90cfcfebd24d8e",
+        "type": "ui_text",
+        "z": "9322692816626645",
+        "group": "b055757a24bdfcee",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Alerta umidade:",
+        "format": "{{msg.payload.alerta_umidade}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 380,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4c7aea024c04a795",
+        "type": "ui_text",
+        "z": "9322692816626645",
+        "group": "b05be9771a5906aa",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Alerta tempo sentado:",
+        "format": "{{msg.payload.alerta_sentado}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 400,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b74b6b7b201c7f28",
+        "type": "change",
+        "z": "9322692816626645",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.luminosidade_raw",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "389958b30d5ac1a7"
+            ]
+        ]
+    },
+    {
+        "id": "389958b30d5ac1a7",
+        "type": "ui_gauge",
+        "z": "9322692816626645",
+        "name": "",
+        "group": "b05be9771a5906aa",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luminosidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#c51f02",
+            "#e6e600",
+            "#4dff00"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 560,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ee9418e2adfec36f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b055757a24bdfcee",
+        "type": "ui_group",
+        "name": "Controle ambiente",
+        "tab": "1ca6d5230bc1ceac",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b05be9771a5906aa",
+        "type": "ui_group",
+        "name": "Dados",
+        "tab": "1ca6d5230bc1ceac",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ca6d5230bc1ceac",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3f4df72463419ba4",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
